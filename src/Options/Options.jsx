@@ -1,7 +1,7 @@
 // import { useEffect } from "react";
 
 
-const Options = ({updateFeedback, total}) => {
+const Options = ({updateFeedback, total, handleResetFeedback}) => {
   
   
   return (
@@ -9,7 +9,7 @@ const Options = ({updateFeedback, total}) => {
       <button onClick={() => updateFeedback("good")}>Good</button>
       <button onClick={() => updateFeedback("neutral")}>Neutral</button>
       <button onClick={() => updateFeedback("bad")}>Bad</button>
-      {(total > 0) && (<button>Reset</button>)}
+      {(total > 0) && (<button onClick={handleResetFeedback}>Reset</button>)}
       
     </div>
   )

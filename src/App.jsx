@@ -14,7 +14,6 @@ function App() {
   const [feedback, setFeedback] = useState(() => {
     
   return JSON.parse(localStorage.getItem("feedback")) ?? objFeedback;
-    
     // const stringifyFeedback = localStorage.getItem("feedback");
     // const parseFeedback = JSON.parse(stringifyFeedback) ?? objFeedback;
     // return parseFeedback;
@@ -24,12 +23,11 @@ function App() {
   const positive = Math.round(((feedback.good + feedback.neutral) / totalFeedback) * 100);
   
   const updateFeedback = (feedbackType) => {
-    setFeedback({...feedback, [feedbackType]: feedback[feedbackType] + 1});
-
+    setFeedback({ feedback, [feedbackType]: feedback[feedbackType] + 1 });
   }
   
   useEffect(() => {
-    localStorage.setItem("feedback", JSON.stringify(feedback));
+   localStorage.setItem("feedback", JSON.stringify(feedback));
   }, [feedback]);
 
   const handleResetFeedback = () => {
